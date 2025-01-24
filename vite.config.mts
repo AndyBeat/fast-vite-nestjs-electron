@@ -1,7 +1,7 @@
 import { join } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import { VitePluginDoubleshot } from 'vite-plugin-doubleshot'
+import { VitePluginDoubleshot } from './plugin-vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,6 +22,7 @@ export default defineConfig({
           entry: 'src/preload/index.ts',
           outDir: 'dist/preload',
         },
+        // waitTimeout: 40000,
       },
     }),
   ],
@@ -35,5 +36,9 @@ export default defineConfig({
   build: {
     outDir: join(__dirname, 'dist/render'),
     emptyOutDir: true,
+  },
+  server: {
+    port: 7053,
+    host: '0.0.0.0',
   },
 })
