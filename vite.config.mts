@@ -37,8 +37,8 @@ export default defineConfig({
     outDir: join(__dirname, 'dist/render'),
     emptyOutDir: true,
   },
-  server: {
-    port: 7053,
-    host: '0.0.0.0',
-  },
+  // server: {
+  //   port: 7053,
+  //   host: '0.0.0.0',
+  // },
 })
